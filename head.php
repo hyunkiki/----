@@ -22,14 +22,14 @@ include_once(G5_LIB_PATH.'/connect.lib.php');
 include_once(G5_LIB_PATH.'/popular.lib.php');
 ?>
 
-
+<div id="skip_to_container">
+        <a href="#gnb">주메뉴 바로가기</a>
+        <a href="#container">본문 바로가기</a>
+</div>
 <!-- 상단 시작 { -->
 <div id="hd">
     <h1 id="hd_h1"><?php echo $g5['title'] ?></h1>
-    <div id="skip_to_container">
-        <a href="#gnb">주메뉴 바로가기</a>
-        <a href="#container">본문 바로가기</a>
-    </div>
+  
 
     <?php
     if(defined('_INDEX_')) { // index에서만 실행
@@ -224,8 +224,5 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 <hr>
 
 <!-- 콘텐츠 시작 { -->
-<div id="wrapper">
-    <div id="container_wr">
-   
-    <div id="container">
-        <?php if (!defined("_INDEX_")) { ?><h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2><?php }
+<!-- div 3개 삭제 -->
+<?php if (!defined("_INDEX_")) { ?><h2 id="container_title"><span title="<?php echo get_text($g5['title']); ?>"><?php echo get_head_title($g5['title']); ?></span></h2><?php }

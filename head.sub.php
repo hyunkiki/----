@@ -55,12 +55,10 @@ if($config['cf_add_meta'])
     echo $config['cf_add_meta'].PHP_EOL;
 ?>
 <title><?php echo $g5_head_title; ?></title>
-
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
 />
-
 <?php
 if (defined('G5_IS_ADMIN')) {
     if(!defined('_THEME_PREVIEW_'))
@@ -69,7 +67,7 @@ if (defined('G5_IS_ADMIN')) {
     $shop_css = '';
     if (defined('_SHOP_')) $shop_css = '_shop';
     // echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'default').$shop_css.'.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL;
-    echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_CSS_URL.'/default.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL; 
+    echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_CSS_URL.'/default.css"> <link rel="stylesheet" href="/gnuboard5/dist/css/comm.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL;
 }
 ?>
 <!--[if lte IE 8]>
@@ -104,12 +102,16 @@ if (defined('_SHOP_')) {
 } else {
     add_javascript('<script src="'.G5_JS_URL.'/jquery.menu.js?ver='.G5_JS_VER.'"></script>', 0);
 }
-add_javascript('<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>', 0);
-add_javascript('<script src="'.G5_JS_URL.'/common.js?ver='.G5_JS_VER.'"></script>', 0);
 add_javascript('<script src="'.G5_JS_URL.'/wrest.js?ver='.G5_JS_VER.'"></script>', 0);
 add_javascript('<script src="'.G5_JS_URL.'/placeholders.min.js"></script>', 0);
+add_javascript('<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.2.0/swiper-bundle.min.js"></script>', 0);
+add_javascript('<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>', 0);
+add_javascript('<script src="/gnuboard5/dist/js/comm.js"></script>', 0);
 add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/font-awesome/css/font-awesome.min.css">', 0);
-add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/font-awesome/css/font-awesome.min.css">', 0);
+add_stylesheet('<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">', 0);
+add_stylesheet('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.2.0/swiper-bundle.min.css">', 0);
+add_stylesheet('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">', 0);
+add_stylesheet('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">', 0);
 
 if(G5_IS_MOBILE) {
     add_javascript('<script src="'.G5_JS_URL.'/modernizr.custom.70111.js"></script>', 1); // overflow scroll 감지
